@@ -10,20 +10,14 @@ function deepestChild() {
 	return document.querySelector('#grand-node div div div div')
 }
 
-// function increaseRankBy(n) {
-//   const rankedLists = document.querySelectorAll( '.ranked-list' )
-//   const firstList = rankedLists[0]
-//   const secondList = rankedLists[1]
+function increaseRankBy( n ) {
+  const rankedLists = document.querySelectorAll( '.ranked-list' )
 
-//   let children = firstList.children
-//   let start = 1
-//   ( let i = 0, l = children.length; i < l; i++  {
-//     parseInt( children[ i ].innerHTML )
-//   }
+  for ( let i = 0, l = rankedLists.length; i < l; i++ ) {
+    let children = rankedLists[ i ].children
 
-//   children = secondList.children
-//   start = 12
-
-//   ( let i = 0, l = children.length; i < l; i++  {
-//      parseInt( children[ i ].innerHTML )
-// }
+    for ( let j = 0, k = children.length; j < k; j++ ) {
+      children[ j ].innerHTML = parseInt( children[ j ].innerHTML ) + n
+    }
+  }
+}
